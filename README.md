@@ -2,6 +2,10 @@
 
 🤖 A Model Context Protocol (MCP) server that allows AI tools to log their activities to daily worklog files with detailed tracking of tool names, AI models, and timestamps.
 
+<a href="https://glama.ai/mcp/servers/@nocoo/mcp-work-history">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@nocoo/mcp-work-history/badge" alt="Work History Server MCP server" />
+</a>
+
 ## ✨ Features
 
 - 🕐 **Precise timestamps** - Logs activities with HH:MM format
