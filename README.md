@@ -84,15 +84,16 @@ Each log file contains:
 
 ### For Warp AI
 
-Add this server to your MCP client configuration:
+Add this server to your Warp MCP configuration:
 
 ```json
 {
-  "mcpServers": {
-    "work-history": {
-      "command": "node",
-      "args": ["/path/to/mcp-work-history/src/index.js"]
-    }
+  "mcp-work-history": {
+    "command": "node",
+    "args": ["/Users/your-username/path/to/mcp-work-history/src/index.js"],
+    "env": {},
+    "working_directory": null,
+    "start_on_launch": true
   }
 }
 ```
@@ -173,6 +174,58 @@ mcp-work-history/
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 🎯 Real-World Example: Warp AI Integration
+
+Here's how to set up automatic activity logging in Warp AI:
+
+### Step 1: Configure MCP Server in Warp
+
+Add the following to your Warp MCP configuration:
+
+```json
+{
+  "mcp-work-history": {
+    "command": "node",
+    "args": ["/Users/nocoo/Workspace/mcp-work-history/src/index.js"],
+    "env": {},
+    "working_directory": null,
+    "start_on_launch": true
+  }
+}
+```
+
+### Step 2: Add Logging Rule to Warp
+
+Configure Warp with this rule to automatically log AI activities:
+
+> **Rule:** "When AI task is done, use mcp-work-history to log this time AI task details. Send AI tool name (Warp), model used, detailed time, and a brief summary of this time task and result."
+
+### Step 3: See It in Action
+
+![Warp MCP Work History Integration](https://assets.lizheng.me/wp-content/uploads/2025/06/mcp-work-activity.png)
+
+*Screenshot showing the MCP Work History server automatically logging AI activities in Warp*
+
+### What Gets Logged
+
+With this setup, every AI interaction in Warp will automatically create entries like:
+
+```markdown
+# 📝 Work Log - 2024-12-06
+
+- ✅ 14:32 - Warp (gemini-2.5-pro): Refactored React component to use custom hooks for state management (1240 tokens | 4.2s | [refactoring, react])
+- ✅ 14:45 - Warp (gemini-2.5-pro): Fixed TypeScript type errors in authentication module (890 tokens | 2.1s | [bugfix, typescript])
+- ✅ 15:10 - Warp (gemini-2.5-pro): Added comprehensive unit tests for user service (1560 tokens | 3.8s | [testing, unit-tests])
+```
+
+### Benefits
+
+- 📊 **Automatic tracking** - No manual logging required
+- 🔍 **Detailed insights** - Track token usage, performance, and costs
+- 📈 **Progress monitoring** - See your daily coding accomplishments
+- 🏷️ **Activity categorization** - Organize work with tags
+- 💰 **Cost tracking** - Monitor AI usage costs over time
 
 ## 📄 License
 
