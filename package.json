@@ -1,0 +1,17 @@
+{
+  "name": "mcp-work-history",
+  "version": "1.0.0",
+  "description": "MCP server for logging AI tool work history",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["mcp", "logging", "ai", "work-history"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  }
+}
